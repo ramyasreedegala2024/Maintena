@@ -25,7 +25,10 @@ function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
+
+  const [loggedIn, setLoggedIn] = useState(
+    Boolean(localStorage.getItem("token")),
+  );
 
   const [dashboard, setDashboard] = useState({
     total_machines: 0,
@@ -221,7 +224,7 @@ function App() {
 
               <h3>{dashboard.total_tickets}</h3>
 
-              <span>Open maintenance requests</span>
+              <span>Total maintenance tickets</span>
             </div>
           </section>
 

@@ -41,17 +41,18 @@ print("\nAdd Machine:")
 print(response.status_code)
 print(response.json())
 
+machine_id = response.json().get("machine_id")
+
 response = requests.get(
     f"{BASE_URL}/machines",
     headers=headers
 )
-
 print("\nAll Machines:")
 print(response.status_code)
 print(response.json())
 
 response = requests.get(
-    f"{BASE_URL}/machines/1",
+    f"{BASE_URL}/machines/{machine_id}",
     headers=headers
 )
 

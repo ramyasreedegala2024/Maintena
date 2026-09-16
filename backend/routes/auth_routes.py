@@ -1,7 +1,6 @@
 from flask import Blueprint, request
 from flask_jwt_extended import create_access_token
 from werkzeug.security import generate_password_hash, check_password_hash
-import mysql.connector
 
 from db import get_db
 
